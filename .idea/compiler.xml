@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring_security_app" />
+        <module name="spring_security_browser" />
+        <module name="spring_security_core" />
+        <module name="spring_security_demo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="imooc_security" target="1.8" />
+      <module name="spring_security_app" target="1.8" />
+      <module name="spring_security_browser" target="1.8" />
+      <module name="spring_security_core" target="1.8" />
+      <module name="spring_security_demo" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
