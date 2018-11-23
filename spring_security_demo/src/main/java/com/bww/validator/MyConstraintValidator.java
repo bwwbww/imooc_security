@@ -20,7 +20,7 @@ public class MyConstraintValidator implements ConstraintValidator<MyConstraint, 
 	public boolean isValid(Object value, ConstraintValidatorContext context) {
 //		helloService.greeting("tom");
 		System.out.println(value);
-		return false;
+		return false;//false表示校验不通过， true表示校验通过  所有的校验逻辑在这里完成
 	}
 
 }

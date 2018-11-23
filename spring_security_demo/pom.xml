@@ -30,10 +30,12 @@
             <artifactId>commons-io</artifactId>
         </dependency>
         <dependency>
+            <!--维护文档  swagger自动生成HTML文档-->
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.7.0</version>
         </dependency>
+        <!--可视化界面-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>

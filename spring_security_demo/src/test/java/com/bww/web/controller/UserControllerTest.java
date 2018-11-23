@@ -66,28 +66,28 @@ public class UserControllerTest {
     public void whenCreateSuccess() throws Exception {
         Date date = new Date();
         long time = date.getTime();
-        String content = "{\"name\":\"bww\",\"sex\":null,\"age\":2,\"birthday\":"+time+"}";
-        String res =  mockMvc.perform(MockMvcRequestBuilders.post("/user")
+        String content = "{\"name\":\"bww\",\"sex\":null,\"age\":2,\"birthday\":" + time + "}";
+        String res = mockMvc.perform(MockMvcRequestBuilders.post("/user")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(content))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
                 .andReturn().getResponse().getContentAsString();
-        System.out.println(res+"---------");
+        System.out.println(res + "---------");
     }
 
     @Test
-    public void whenUpdateSuccess() throws Exception{
+    public void whenUpdateSuccess() throws Exception {
 
-        Date time =new Date(LocalDateTime.now().plusYears(1).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
-        String content = "{\"id\":1,\"sex\":null,\"age\":2,\"birthday\":"+time.getTime()+"}";
-        String res =  mockMvc.perform(MockMvcRequestBuilders.put("/user/1")
+        Date time = new Date(LocalDateTime.now().plusYears(1).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
+        String content = "{\"id\":1,\"sex\":null,\"age\":2,\"birthday\":" + time.getTime() + "}";
+        String res = mockMvc.perform(MockMvcRequestBuilders.put("/user/1")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(content))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
                 .andReturn().getResponse().getContentAsString();
-        System.out.println(res+"---------");
+        System.out.println(res + "---------");
     }
 
     @Test

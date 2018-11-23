@@ -3,6 +3,7 @@ package com.bww.controller;
 
 import com.bww.dto.User;
 import com.bww.dto.UserCondition;
+import com.bww.exception.MyRuntimeException;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
@@ -68,5 +69,13 @@ public class UserController {
     public void delete(@PathVariable Integer id){
         System.out.println(id);
 
+    }
+
+    //测试异常处理机制
+    @GetMapping(value = "/exception/{id}")
+    @JsonView(User.WithAgeView.class)
+    public User QueryByIdWithException(@PathVariable Integer id) {
+//        throw new RuntimeException("error。。。。");
+          throw  new MyRuntimeException(id);
     }
 }
