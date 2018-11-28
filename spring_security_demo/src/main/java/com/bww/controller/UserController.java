@@ -10,6 +10,7 @@ import org.apache.commons.lang.builder.ToStringStyle;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.core.Authentication;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +21,17 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
+
+    //第一种 Authentication authentication：
+    // springmvc会自动到spring的SecurityContext中查找authentication
+
+    //第二种方法 @AuthenticationPrincipal UserDetails user 只获取部分信息Principal；
+    @GetMapping("/me")
+    public Object getCurrentUser(Authentication authentication){
+        return authentication;
+//        return SecurityContextHolder.getContext().getAuthentication();
+
+    }
 
     @PutMapping(value = {"/{id}"})
     public User Update(@Valid @RequestBody User user,BindingResult errors){

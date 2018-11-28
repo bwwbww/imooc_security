@@ -22,7 +22,7 @@ public class QueueListener implements ApplicationListener<ContextRefreshedEvent>
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        System.out.println("..........eeeeee....");
+//        System.out.println("..........eeeeee....");
         new Thread(()->{
           while (true){
               if (StringUtils.isNotBlank(mockQueue.getCompleteOrder())){
@@ -33,7 +33,7 @@ public class QueueListener implements ApplicationListener<ContextRefreshedEvent>
                   deferredResult.setResult("success");
                   mockQueue.setCompleteOrder(null);
               }else {
-                  logger.info("wait....:");
+//                  logger.info("wait....:");
                   try {
                       Thread.sleep(1000);
                   } catch (InterruptedException e) {
