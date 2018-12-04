@@ -10,6 +10,8 @@ public class SecurityProperties {
 
     private SmsCodeProperties sms = new SmsCodeProperties();
 
+    private SocialProperties social = new SocialProperties();
+
     public SmsCodeProperties getSms() {
         return sms;
     }
@@ -32,5 +34,13 @@ public class SecurityProperties {
 
     public void setBrowser(BrowserProperties browser) {
         this.browser = browser;
+    }
+
+    public SocialProperties getSocial() {
+        return social;
+    }
+
+    public void setSocial(SocialProperties social) {
+        this.social = social;
     }
 }

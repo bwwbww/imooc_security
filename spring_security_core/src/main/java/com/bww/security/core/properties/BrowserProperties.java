@@ -9,6 +9,16 @@ public class BrowserProperties {
 
     private int rememberMeSeconds = 3600;
 
+    private  String signOutUrl;
+
+    public String getSignOutUrl() {
+        return signOutUrl;
+    }
+
+    public void setSignOutUrl(String signOutUrl) {
+        this.signOutUrl = signOutUrl;
+    }
+
     public String getLoginPage() {
         return loginPage;
     }
